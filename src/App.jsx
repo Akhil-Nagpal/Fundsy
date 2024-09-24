@@ -3,6 +3,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import "./App.css";
+import {
+  AppsRoutes,
+  ChartsRoutes,
+  DashboardRoutes,
+  PagesRoutes,
+} from "./router";
 
 function App() {
   const activeMenu = true;
@@ -43,6 +49,15 @@ function App() {
             <nav className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
               Navbar
             </nav>
+          </div>
+
+          <div>
+            <Routes>
+              <Route path="/*" element={<DashboardRoutes />} />
+              <Route path="/pages/*" element={<PagesRoutes />} />
+              <Route path="/apps/*" element={<AppsRoutes />} />
+              <Route path="/charts/*" element={<ChartsRoutes />} />
+            </Routes>
           </div>
         </div>
       </BrowserRouter>
