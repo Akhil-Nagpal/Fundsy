@@ -24,9 +24,10 @@ import {
 
 import Root from "./layout/Root";
 import { Navbar, Sidebar } from "./components/index";
+import { useStateContext } from "./context/ContextProvider";
 
 function App() {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
 
   return (
     <>
