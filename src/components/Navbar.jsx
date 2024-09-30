@@ -43,8 +43,11 @@ function Navbar() {
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
+
     window.addEventListener("resize", handleResize);
+
     handleResize();
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -71,19 +74,19 @@ function Navbar() {
           <NavButton
             title="Cart"
             color="blue"
-            customFn={() => handleClick("cart")}
+            customFn={handleClick("cart")}
             icon={<FiShoppingCart />}
           />
           <NavButton
             title="Chat"
-            customFn={() => handleClick("chat")}
+            customFn={handleClick("chat")}
             color="blue"
             dotColor="#03C9D7"
             icon={<BsChatLeft />}
           />
           <NavButton
             title="Notifications"
-            customFn={() => handleClick("notification")}
+            customFn={handleClick("notification")}
             color="blue"
             dotColor="#03C9D7"
             icon={<RiNotification3Line />}
