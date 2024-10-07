@@ -684,6 +684,7 @@ export const chatData = [
 
 export const earningData = [
   {
+    id: 1,
     icon: <MdOutlineSupervisorAccount />,
     amount: "39,354",
     percentage: "-4%",
@@ -693,6 +694,7 @@ export const earningData = [
     pcColor: "red-600",
   },
   {
+    id: 2,
     icon: <BsBoxSeam />,
     amount: "4,396",
     percentage: "+23%",
@@ -702,16 +704,17 @@ export const earningData = [
     pcColor: "green-600",
   },
   {
+    id: 3,
     icon: <FiBarChart />,
     amount: "423,39",
     percentage: "+38%",
     title: "Sales",
     iconColor: "rgb(228, 106, 118)",
     iconBg: "rgb(255, 244, 229)",
-
     pcColor: "green-600",
   },
   {
+    id: 4,
     icon: <HiOutlineRefresh />,
     amount: "39,354",
     percentage: "-12%",
