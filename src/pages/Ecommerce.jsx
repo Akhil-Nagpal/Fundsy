@@ -26,15 +26,15 @@ function Ecommerce() {
   return (
     <>
       <section className="mt-24">
-        <div className="flex flex-wrap lg:flex-nowrap justify-center">
+        <div className="overflow-hidden flex flex-wrap lg:flex-nowrap justify-center">
           {/* Hero Section */}
           <div
-            className="flex items-center dark:text-gray-200 rounded-lg
-            dark:bg-secondary-dark-bg w-full lg:w-80 bg-center bg-cover bg-no-repeat p-8 m-8"
+            className="flex items-center dark:text-gray-200 rounded-lg lg:m-4 mt-6 m-4
+            dark:bg-secondary-dark-bg w-full lg:w-80 bg-center bg-cover bg-no-repeat p-8"
             style={{ backgroundImage: `url(${HeroPattern})` }}
           >
             <div className="flex flex-col justify-center items-start gap-3">
-              <div className="">
+              <div>
                 <p className="text-gray-300 text-lg tracking-wide lg:text-sm">
                   Earnings
                 </p>
@@ -51,6 +51,40 @@ function Ecommerce() {
                 text="Download"
               />
             </div>
+          </div>
+
+          {/* Revenue Cards - Hero Section */}
+          <div className="flex flex-wrap justify-start items-center gap-3">
+            {earningData.map((item) => {
+              return (
+                <div
+                  key={item?.id}
+                  className="flex flex-col justify-center items-center bg-white p-4 rounded-2xl dark:text-gray-200 dark:bg-secondary-dark-bg"
+                >
+                  <button
+                    className="text-2xl p-4 rounded-full opacity-0.9 hover:drop-shadow-xl"
+                    style={{
+                      backgroundColor: item?.iconBg,
+                      color: item?.iconColor,
+                    }}
+                  >
+                    {item?.icon}
+                  </button>
+
+                  <div className=" mt-3 flex items-center gap-2">
+                    <p className="text-lg font-semibold">
+                      {item?.amount}
+                    </p>
+                    <p className={`text-sm text-${item?.pcColor}`}>
+                      {item?.percentage}
+                    </p>
+                  </div>
+                  <p className="text-sm text-gray-400">
+                    {item?.title}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
