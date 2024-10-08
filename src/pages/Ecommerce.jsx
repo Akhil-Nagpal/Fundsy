@@ -26,23 +26,19 @@ function Ecommerce() {
   return (
     <>
       <section className="mt-24">
-        <div className="flex flex-wrap lg:flex-nowrap justify-center ">
+        <div className="flex flex-wrap lg:flex-nowrap justify-center">
+          {/* Hero Section */}
           <div
-            className="flex relative justify-center items-center dark:text-gray-200 dark:bg-secondary-dark-bg
-              w-full lg:w-96 p-8"
+            className="flex items-center dark:text-gray-200 rounded-lg
+            dark:bg-secondary-dark-bg w-full lg:w-80 bg-center bg-cover bg-no-repeat p-8 m-8"
+            style={{ backgroundImage: `url(${HeroPattern})` }}
           >
-            <img
-              className="rounded-xl"
-              src={HeroPattern}
-              alt="hero-pattern"
-            />
-
-            <div className=" flex justify-center items-center flex-col absolute left-20 lg:left-[3.5rem] gap-8 lg:gap-4 ">
-              <div>
+            <div className="flex flex-col justify-center items-start gap-3">
+              <div className="">
                 <p className="text-gray-300 text-lg tracking-wide lg:text-sm">
                   Earnings
                 </p>
-                <p className=" text-white font-semibold text-3xl lg:text-[1.7rem] lg:font-normal">
+                <p className="text-white font-semibold text-3xl lg:text-[1.7rem] lg:font-semibold">
                   $76,874
                 </p>
               </div>
