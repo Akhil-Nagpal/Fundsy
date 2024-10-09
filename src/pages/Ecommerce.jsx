@@ -30,7 +30,7 @@ function Ecommerce() {
           {/* Hero Section */}
           <div
             className="flex items-center dark:text-gray-200 rounded-lg lg:m-4 mt-6 m-4
-            dark:bg-secondary-dark-bg w-full lg:w-80 bg-center bg-cover bg-no-repeat p-8"
+            dark:bg-secondary-dark-bg w-full lg:max-w-80 bg-center bg-cover bg-no-repeat p-8"
             style={{ backgroundImage: `url(${HeroPattern})` }}
           >
             <div className="flex flex-col justify-center items-start gap-3">
@@ -85,6 +85,20 @@ function Ecommerce() {
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        {/* Revenue Earning Section */}
+        <div className=" flex justify-center items-center mt-5 p-8 bg-red-500">
+          <div className=" max-w-80 w-full bg-white rounded-xl flex justify-between">
+            <p className="texdt-xl m-4 text-gray-600 font-semibold">
+              Revenue Expense
+            </p>
+
+            <div>
+              <p>Earnings</p>
+              <p>Budget</p>
+            </div>
           </div>
         </div>
       </section>
