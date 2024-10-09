@@ -1,4 +1,5 @@
 import React from "react";
+// import resolveConfig from "tailwindcss/resolveConfig"
 import { BsCurrencyDollar } from "react-icons/bs";
 // import { GoPrimitiveDot } from "react-icons/go";
 import { IoIosMore } from "react-icons/io";
@@ -20,17 +21,24 @@ import {
   ecomPieChartData,
 } from "../data/dummy";
 import { useStateContext } from "../context/ContextProvider";
-import HeroPattern from "../assets/hero-pattern.png";
+import HeroPattern from "@/assets/hero-pattern.png";
+
+// import tailwindConfig from "@/../tailwind.config"
+// const config = resolveConfig(tailwindConfig)
+
+// const color = "red-600"
+// const components = color.split("-")
+// const hexCode = config.theme.textColor[components[0]][components[1]]
+// console.log(hexCode)
 
 function Ecommerce() {
   return (
     <>
       <section className="mt-24">
-        <div className="overflow-hidden flex flex-wrap lg:flex-nowrap justify-center">
+        <div className="mx-auto max-w-5xl overflow-hidden flex flex-wrap lg:flex-nowrap justify-center">
           {/* Hero Section */}
           <div
-            className="flex items-center dark:text-gray-200 rounded-lg lg:m-4 mt-6 m-4
-            dark:bg-secondary-dark-bg w-full lg:max-w-80 bg-center bg-cover bg-no-repeat p-8"
+            className="mx-6 flex items-center dark:text-gray-200 rounded-lg dark:bg-secondary-dark-bg w-full bg-center bg-cover bg-no-repeat p-8 lg:w-2/5 lg:mx-0"
             style={{ backgroundImage: `url(${HeroPattern})` }}
           >
             <div className="flex flex-col justify-center items-start gap-3">
@@ -54,8 +62,19 @@ function Ecommerce() {
           </div>
 
           {/* Revenue Cards - Hero Section */}
-          <div className="flex flex-wrap justify-start items-center gap-3">
+          <div className="w-full mt-4 px-6 grid grid-cols-2 gap-4 md:grid-cols-4 lg:w-3/5 lg:mt-0 lg:ml-4 lg:px-0">
             {earningData.map((item) => {
+              let percentageColorClass = "";
+              let percentageText = "";
+
+              if (item.percentage > 0) {
+                percentageColorClass = "text-green-600";
+                percentageText = `+${item.percentage}%`;
+              } else {
+                percentageColorClass = "text-red-600";
+                percentageText = `${item.percentage}%`;
+              }
+
               return (
                 <div
                   key={item?.id}
@@ -75,8 +94,8 @@ function Ecommerce() {
                     <p className="text-lg font-semibold">
                       {item?.amount}
                     </p>
-                    <p className={`text-sm text-${item?.pcColor}`}>
-                      {item?.percentage}
+                    <p className={`text-sm ${percentageColorClass}`}>
+                      {percentageText}
                     </p>
                   </div>
                   <p className="text-sm text-gray-400">
@@ -89,8 +108,8 @@ function Ecommerce() {
         </div>
 
         {/* Revenue Earning Section */}
-        <div className=" flex justify-center items-center mt-5 p-8 bg-red-500">
-          <div className=" max-w-80 w-full bg-white rounded-xl flex justify-between">
+        <div className="px-6 flex justify-center items-center mt-4 py-8 bg-red-500">
+          <div className="max-w-5xl w-full bg-white rounded-xl flex justify-between">
             <p className="texdt-xl m-4 text-gray-600 font-semibold">
               Revenue Expense
             </p>
