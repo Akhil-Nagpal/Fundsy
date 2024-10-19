@@ -45,6 +45,9 @@ const generateSpacing = () => {
   return spacing;
 };
 
+const spacing = generateSpacing();
+const lineHeight = spacing;
+
 export default {
   future: {
     hoverOnlyWhenSupported: true,
@@ -53,16 +56,32 @@ export default {
   theme: {
     borderRadius: generateBorderRadius(),
     fontSize: generateFontSize(),
-    spacing: generateSpacing(),
+    spacing,
+    lineHeight,
+    colors: {
+      beige: {
+        100: "#F8F4F0",
+        500: "#98908B",
+      },
+      grey: {
+        100: "#F2F2F2",
+        300: "#B3B3B3",
+        500: "#696868",
+        900: "#201F24",
+      },
+      green: "#277C78",
+      yellow: "#F2CDAC",
+      cyan: "#82C9D7",
+      navy: "#626070",
+      red: "#C94736",
+      purple: "#826CB0",
+      white: "#FFFFFF",
+      black: "#000000",
+      transparent: "transparent",
+    },
     extend: {
       fontFamily: {
-        sans: ['"Red Hat Text", sans-serif'],
-      },
-      colors: {
-        beige: {
-          100: "",
-          500: "",
-        },
+        sans: ['"Public Sans", sans-serif'],
       },
       transitionDuration: {
         DEFAULT: "300ms",
